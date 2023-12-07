@@ -1,0 +1,5 @@
+summary: GNOME XML library
+webpage: http://xmlsoft.org
+version: 2.11.5 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/libxml2-2.11.5-netbsd-9.2-amd64.tar.xz 
+bin-sha: 00584881e215359591b3564c8b07096068734c68f69e576746413c963e2e836e

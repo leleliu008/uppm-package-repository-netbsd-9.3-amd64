@@ -1,0 +1,5 @@
+summary: A command-line tool to create a hex dump of a given file or standard input
+webpage: https://www.vim.org/
+version: 9.0.2050 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/xxd-9.0.2050-netbsd-9.2-amd64.tar.xz 
+bin-sha: 320c186f58e72d9cdaf5c165cae636b3e5e40b40c903e9330faa282503df0e96

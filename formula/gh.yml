@@ -1,0 +1,5 @@
+summary: GitHub official command-line tool
+webpage: https://github.com/cli/cli
+version: 2.38.0 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/gh-2.38.0-netbsd-9.2-amd64.tar.xz 
+bin-sha: dfee2ecb70b033a8b31192e57869c761b3b74c04205e10f2c5156985058d0717

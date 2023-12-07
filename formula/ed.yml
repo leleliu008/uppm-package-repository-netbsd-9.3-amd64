@@ -1,0 +1,5 @@
+summary: Classic UNIX line editor
+webpage: https://www.gnu.org/software/ed/ed.html
+version: 1.19 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/ed-1.19-netbsd-9.2-amd64.tar.xz 
+bin-sha: 2fc2ab42d05e3f25f62a6267f46db0418f1bbaecd3f8d9869e8473dc58893e2a

@@ -1,0 +1,5 @@
+summary: charset conversion library
+webpage: https://www.gnu.org/software/libiconv
+version: 1.17 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/libiconv-1.17-netbsd-9.2-amd64.tar.xz 
+bin-sha: ba44c8bee12c6568b3407ad057e9c82bf7bc818246bd83ee0c74b28d15adc5e3

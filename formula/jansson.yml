@@ -1,0 +1,5 @@
+summary: C library for encoding, decoding, and manipulating JSON
+webpage: https://digip.org/jansson
+version: 2.14 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/jansson-2.14-netbsd-9.2-amd64.tar.xz 
+bin-sha: bbaba52b931e7920e130e3f518ed5d117edb2240cb21cae135c1f9b3627e1883

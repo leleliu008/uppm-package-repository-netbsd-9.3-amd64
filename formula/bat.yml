@@ -1,0 +1,5 @@
+summary: Clone of cat(1) with syntax highlighting and Git integration
+webpage: https://github.com/sharkdp/bat
+version: 0.24.0 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/bat-0.24.0-netbsd-9.2-amd64.tar.xz 
+bin-sha: 695b3e016cdb54b7bdef4c1c5b5c46270342dc6de4bbd185779fa3d960d17238

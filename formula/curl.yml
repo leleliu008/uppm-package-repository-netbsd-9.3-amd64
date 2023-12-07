@@ -1,0 +1,5 @@
+summary: Get a file from an HTTP, HTTPS or FTP server
+webpage: https://curl.haxx.se/
+version: 8.3.0 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/curl-8.3.0-netbsd-9.2-amd64.tar.xz 
+bin-sha: e46993bef618107f53c8fb7d1bb9f540ae0fb72acabd5bece59de8185b541496
