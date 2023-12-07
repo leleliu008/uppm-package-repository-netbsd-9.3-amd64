@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [bash, bat, bison, bzip2, b3sum, cmake, coreutils, curl, darkhttpd, diffutils, dos2unix, ed, flex, findutils, gawk, gperf, gm4, gmake, gh, grep, gsed, gtar, gzip, jq, libarchive, lzip, lz4, nasm, ninja, openssl, patchelf, patch, pkgconf, re2c, rsync, swig, sqlite3, tree, uctags, unzip, uppm, xxd, xz, yq, zip, p7zip, zstd, zoxide, base16, base64, bsdtar, sysinfo, easyutils, gettext-tools, xsltproc, libxml2-utils, figlet, lolcat, zlib, libiconv, libyaml, libxml2, jansson]
+        pkg: [bash, bat, bison, bzip2, b3sum, coreutils, curl, darkhttpd, diffutils, dos2unix, ed, flex, findutils, gawk, gperf, gm4, gmake, gh, golang, grep, gsed, gtar, gzip, jq, libarchive, lzip, lz4, nasm, ninja, openssl, patchelf, patch, pkgconf, re2c, rsync, swig, sqlite3, tree, uctags, uppm, xxd, xz, yq, zstd, zoxide, base16, base64, bsdtar, sysinfo, easyutils, gettext-tools, xsltproc, libxml2-utils, figlet, lolcat, zlib, libiconv, libyaml, libxml2, jansson]
 
     runs-on: ubuntu-latest
 
@@ -17,6 +17,10 @@ jobs:
       - run: chmod a+x ppkg
       - run: ./ppkg setup
       - run: ./ppkg update
+      - run: |
+          sed -i '/src-url/c src-url: https://github.com/NixOS/patchelf/releases/download/0.17.2/patchelf-0.17.2.tar.bz2' ~/.ppkg/repos.d/offical-core/formula/patchelf.yml
+          sed -i '/src-sha/c src-sha: bae2ea376072e422c196218dd9bdef0548ccc08da4de9f36b4672df84ea2d8e2' ~/.ppkg/repos.d/offical-core/formula/patchelf.yml
+
       - run: ./ppkg install netbsd-9.2-amd64/${{ matrix.pkg }} --link-type=static-full
       - run: ./ppkg pack    netbsd-9.2-amd64/${{ matrix.pkg }}
 
@@ -81,11 +85,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: b3sum
-          path: .
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: cmake
           path: .
 
       - uses: actions/download-artifact@v3
@@ -156,6 +155,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: gh
+          path: .
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: golang
           path: .
 
       - uses: actions/download-artifact@v3
@@ -250,11 +254,6 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: unzip
-          path: .
-
-      - uses: actions/download-artifact@v3
-        with:
           name: uppm
           path: .
 
@@ -266,16 +265,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: xz
-          path: .
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: zip
-          path: .
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: p7zip
           path: .
 
       - uses: actions/download-artifact@v3
