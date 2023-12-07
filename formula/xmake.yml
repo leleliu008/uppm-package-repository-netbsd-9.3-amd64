@@ -1,0 +1,5 @@
+summary: A cross-platform build utility based on Lua
+webpage: https://xmake.io/
+version: 2.8.5
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.07/xmake-2.8.5-netbsd-9.3-amd64.tar.xz
+bin-sha: 51a6a02b6e0ae0bbac7c1264192e1276fda75f1d5da672d784ab0a1ec1633ac1
