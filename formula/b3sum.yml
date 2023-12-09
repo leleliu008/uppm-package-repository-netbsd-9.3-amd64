@@ -1,5 +1,5 @@
 summary: BLAKE3 cryptographic hash function
 webpage: https://github.com/BLAKE3-team/BLAKE3
 version: 1.4.1 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/b3sum-1.4.1-netbsd-9.2-amd64.tar.xz 
-bin-sha: 0107374b286244f3e50649063b0bdcdf48f4d36f242d76335bbee35bdf007473
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/b3sum-1.4.1-netbsd-9.2-amd64.tar.xz 
+bin-sha: f292e56cf3b2f9df40e4ac6158135be2bd2d553b979d137604cb51a93c0572a4

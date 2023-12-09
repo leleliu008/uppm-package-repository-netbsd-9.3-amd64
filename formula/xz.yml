@@ -1,5 +1,5 @@
 summary: General-purpose data compression with high compression ratio
 webpage: https://tukaani.org/xz
 version: 5.4.5 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/xz-5.4.5-netbsd-9.2-amd64.tar.xz 
-bin-sha: 5fe3781803967536ce3f38c987057d39d1c098c44d0dc1da2e64fe4c91a8f7b2
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/xz-5.4.5-netbsd-9.2-amd64.tar.xz 
+bin-sha: c2bc33efc77400015dd2c332a2ec2ce4d9161f1f0a61a4d0101084040244c917

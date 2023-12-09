@@ -1,5 +1,5 @@
 summary: GNU implementation of the famous stream editor
 webpage: https://www.gnu.org/software/sed
 version: 4.9 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/gsed-4.9-netbsd-9.2-amd64.tar.xz 
-bin-sha: ee297be4977a9dcfb59c1d5be4b01d10dbef4ea7b97807ca2fc209e14ef9e0af
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/gsed-4.9-netbsd-9.2-amd64.tar.xz 
+bin-sha: 1f9648e5b72ff05cee4aedcc820ec199e92f1910c2ae567b47663e82eaacbcc4

@@ -1,5 +1,5 @@
 summary: a command-line tool to get your system information.
 webpage: https://github.com/leleliu008/C-examples
-version: 2023.12.07 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/sysinfo-2023.12.07-netbsd-9.2-amd64.tar.xz 
-bin-sha: 5a04f42d26b131027e690d746f35fd598ec95c8121150993995a98b614c13632
+version: 2023.12.09 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/sysinfo-2023.12.09-netbsd-9.2-amd64.tar.xz 
+bin-sha: db04045e296e00c0ef7cdd10b62ae85bf195693805f156cf79bb32b58e272057

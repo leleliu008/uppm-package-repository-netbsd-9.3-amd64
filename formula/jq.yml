@@ -1,5 +1,5 @@
 summary: A lightweight and flexible command-line JSON processor
 webpage: https://stedolan.github.io/jq
 version: 1.7 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.07/jq-1.7-netbsd-9.2-amd64.tar.xz 
-bin-sha: 1eaa578b0504359258b050fa458a94deba79d5d858b98316a744a33d580c799c
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/jq-1.7-netbsd-9.2-amd64.tar.xz 
+bin-sha: 927501638715f45302f9999d6858db3f9361f7ed484d96cceea8b251cde0180b
