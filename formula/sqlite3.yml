@@ -1,5 +1,5 @@
 summary: A small, fast, self-contained, high-reliability, full-featured, SQL database engine written in C
 webpage: https://www.sqlite.org/
 version: 3.44.0 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/sqlite3-3.44.0-netbsd-9.2-amd64.tar.xz 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/sqlite3-3.44.0-netbsd-9.2-amd64.tar.xz
 bin-sha: 5adedbfa790e793c2402efdf628e7aafa9f478b1f34b78a58fd9f114a244c2b5

@@ -1,5 +1,5 @@
 summary: Multi-format archive and compression library
 webpage: https://www.libarchive.org/
 version: 3.7.2 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/libarchive-3.7.2-netbsd-9.2-amd64.tar.xz 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/libarchive-3.7.2-netbsd-9.2-amd64.tar.xz
 bin-sha: 7fc7cba19fdc6d6982e3ce6241c91a019b117b2bfb9338254867bb5254c3a263

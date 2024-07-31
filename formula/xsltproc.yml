@@ -1,5 +1,5 @@
 summary: C XSLT library for GNOME
 webpage: http://xmlsoft.org/XSLT
 version: 1.1.37 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/xsltproc-1.1.37-netbsd-9.2-amd64.tar.xz 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/xsltproc-1.1.37-netbsd-9.2-amd64.tar.xz
 bin-sha: 17746f070e755c1b6ef55ae9399e41bf170c4649d926d644c8ed9fabd905d358

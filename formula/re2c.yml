@@ -1,5 +1,5 @@
 summary: Generate C-based recognizers from regular expressions
 webpage: https://re2c.org/
 version: 3.1 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.2-amd64/releases/download/2023.12.09/re2c-3.1-netbsd-9.2-amd64.tar.xz 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/re2c-3.1-netbsd-9.2-amd64.tar.xz
 bin-sha: ae950b0fa690a771f0dbffc6a0bdf323c6357748fa72a0391abf682a110c5b61
