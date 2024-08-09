@@ -78,6 +78,8 @@ do
     runs-on: ubuntu-latest
 
     steps:
+      - run: curl -LO https://curl.se/ca/cacert.pem
+
       - uses: cross-platform-actions/action@v0.25.0
         with:
           operating_system: netbsd
@@ -91,6 +93,8 @@ do
 
             run sudo pkgin -y update
             run sudo pkgin -y install curl
+
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
