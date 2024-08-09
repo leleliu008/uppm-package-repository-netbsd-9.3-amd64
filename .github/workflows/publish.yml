@@ -30,7 +30,7 @@ jobs:
             run sudo pkgin -y update
             run sudo pkgin -y install curl
 
-            run export SSL_CERT_FILE="/Users/fpliu/uppm-package-repository-netbsd-9.3-amd64/cacert.pem"
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -99,7 +99,7 @@ jobs:
             run sudo pkgin -y update
             run sudo pkgin -y install curl
 
-            run export SSL_CERT_FILE="/Users/fpliu/uppm-package-repository-netbsd-9.3-amd64/cacert.pem"
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -168,7 +168,7 @@ jobs:
             run sudo pkgin -y update
             run sudo pkgin -y install curl
 
-            run export SSL_CERT_FILE="/Users/fpliu/uppm-package-repository-netbsd-9.3-amd64/cacert.pem"
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -237,7 +237,7 @@ jobs:
             run sudo pkgin -y update
             run sudo pkgin -y install curl
 
-            run export SSL_CERT_FILE="/Users/fpliu/uppm-package-repository-netbsd-9.3-amd64/cacert.pem"
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -306,7 +306,7 @@ jobs:
             run sudo pkgin -y update
             run sudo pkgin -y install curl
 
-            run export SSL_CERT_FILE="/Users/fpliu/uppm-package-repository-netbsd-9.3-amd64/cacert.pem"
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -375,7 +375,7 @@ jobs:
             run sudo pkgin -y update
             run sudo pkgin -y install curl
 
-            run export SSL_CERT_FILE="/Users/fpliu/uppm-package-repository-netbsd-9.3-amd64/cacert.pem"
+            run export SSL_CERT_FILE="$PWD/cacert.pem"
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
