@@ -1,0 +1,5 @@
+summary: A command-line fuzzy finder written in Go
+webpage: https://github.com/junegunn/fzf
+version: 0.48.1
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/fzf-0.48.1-netbsd-9.3-amd64.tar.xz
+bin-sha: 6c33dd5771a034caf7a66fb09b9c4080d0a01c6467de5db39a7f2c21175f502f
