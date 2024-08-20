@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [aalib, abook, act, actionlint, adig, aerc, ag, age, agg, alacritty, alass, algernon, ali, aliyun-cli, anchor-cli, antibody, aom, apkeep, apr, aptly, archiver, argparse, args, aria2, aribb24, arping, async++, atuin, autoconf-archive, autogen, automake, autossh, autotools-setup, awk, axel, azcopy, b3sum, bandwhich, base16, base64, bash, basis_universal, bat, bazelisk, bc, bcrypt, bear, bgrep, binaryen, bind, binocle, bitcoin, bk, blake3, blockhash, bmake, botan, bottom, boxes, brook, broot, brotli, brpc, bsdtar, bullet, byacc, c-examples, caddy, caf, cargo-c, cargo-deb, catch2, catimg, ccache, cdrtools, cereal, cfitsio, cflow, cgal, cgif, chafa, cheat, check, chezmoi, chicken, chinese-calendar, choose, cilium-cli, circleci-cli, cli11, clog, cmake, cmark, cmatrix, code-cli, coreutils, cotp, cpio, cppcheck, cppunit, cpuid, cpuinfo, croc, crosstool-ng, crowbook, ctop, cue, cups, curl, curlie, cxxopts, d2, darkhttpd, dasel, dash, delta, difftastic, diffutils, distcc, dmalloc, dns2tcp, dnslookup, dnsmap, dnsx, dog, doggo, dolt, dos2unix]
+        pkg: [aalib, abook, act, actionlint, adig, aerc, ag, age, agg, alacritty, alass, algernon, ali, aliyun-cli, anchor-cli, antibody, apkeep, apr, aptly, archiver, args, aria2, aribb24, async++, atuin, autoconf-archive, automake, autotools-setup, awk, axel, b3sum, base16, base64, bash, basis_universal, bat, bazelisk, bc, bcrypt, bear, bgrep, binaryen, bind, binocle, bitcoin, bk, blockhash, bmake, bottom, boxes, brook, broot, brotli, bsdtar, bullet, byacc, c-examples, caddy, cargo-c, cargo-deb, catch2, catimg, cdrtools, cereal, cfitsio, cflow, cgal, cgif, chafa, cheat, check, chezmoi, chicken, chinese-calendar, choose, cilium-cli, circleci-cli, cli11, click, clog, cmark, cmatrix, code-cli, coreutils, cotp, cpio, cppcheck, cppunit, cpu_features, cpuid, cpuinfo, croc, crosstool-ng, crowbook, cue, cups, curl, curlie, cxxopts, d2, darkhttpd, dasel, dash, dav1d, delta, difftastic, diffutils, distcc, dmalloc, dns2tcp, dnslookup, dnsmap, dnsx, dog, doggo, dos2unix, dot_static, doxygen, dtc, dufs, dust, e2fsprogs, easyutils, ed, elfcat, elvish, epsilon, erdtree]
 
     runs-on: ubuntu-latest
 
@@ -38,6 +38,10 @@ jobs:
             run ./ppkg about
             run ./ppkg setup --syspm
             run ./ppkg update
+
+            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+
             run ./ppkg install ${{ matrix.pkg }}
 
             for item in $(./ppkg ls-installed)
@@ -78,7 +82,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [dot_static, doxygen, dtc, dua, duf, dufs, dust, e2fsprogs, easyutils, ed, effcee, elfcat, elvish, epsilon, esbuild, ethereum, exa, exhale, exiv2, eza, fakeroot, fcp, fd, fdroidcl, fff, figlet, findent, findutils, fish, flatbuffers, flatc, flock, fnm, fortune, freetype2, frei0r, fselect, fsmon, fswatch, fzf, fzy, g, garble, gat, gawk, gbt, gcc, gcc@12, gdb, gdbm, gdk-pixbuf-tools, gdu, geographiclib, germanium, getopt, gettext-tools, gf, gh, ghr, giflib, gindent, git, git-cliff, git-lfs, gitui, gitwatch, glew, glib-tools, glm, glow, glslviewer, glyr, gmake, gn, gnu-barcode, gnu-which, gnupg, gnuplot, go-md2man, go-tools, godu, gogs, golang, golang@1.21, gomobile, google-benchmark, google-highway, gopls, goreleaser, gosh, gotop, gotty, gox, gperf, gping, gpsim, gputils, grep, grex, groff, gron, grpc-plugins, gsed, gtime, gts, halibut, hashcat, helix, helm, help2man, hexdump, hexyl, htop, htslib, httpx, hugo, hunspell, hunter, hurl, hydroxide, hyperfine, id3lib, ideviceinstaller, incus, invoice, iperf3, itstool, ixwebsocket]
+        pkg: [esbuild, ethereum, exa, exhale, eza, fcp, fd, fdroidcl, fff, figlet, findent, findutils, fish, flatbuffers, flatc, flock, freetype2, frei0r, fselect, fswatch, fzf, fzy, garble, gat, gawk, gbt, gcc, gcc@12, gdb, gdbm, gdk-pixbuf-tools, gdu, geographiclib, germanium, getopt, gettext-tools, gh, ghr, gif2png, giflib, gindent, git, git-cliff, git-lfs, gitoxide, gitui, gitwatch, glew, glib-tools, glib@2.78, glm, glow, glslviewer, glyr, gmake, gnu-barcode, gnu-which, gnupg, gnuplot, go-md2man, go-tools, godu, gogs, golang, golang@1.21, gomobile, google-benchmark, google-highway, gopls, goreleaser, gosh, gotty, gox, gperf, gping, gpsim, gputils, grep, grex, groff, gron, grpc-plugins, gsed, gtime, gts, halibut, hashcat, helix, helm, help2man, hexdump, hexyl, htop, htslib, httpx, hugo, hunspell, hunter, hurl, hydroxide, hyperfine, id3lib, ideviceinstaller, incus, invoice, iperf3, itstool, ixwebsocket, jackaudio, jasper, jemalloc, jj, joshuto, jpegoptim, jq, json-glib, jump, k9s, kcp, kcptun, ko, krb5, lame, lazygit, lcms2, lcov, ldns, leptonica]
 
     runs-on: ubuntu-latest
 
@@ -107,6 +111,10 @@ jobs:
             run ./ppkg about
             run ./ppkg setup --syspm
             run ./ppkg update
+
+            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+
             run ./ppkg install ${{ matrix.pkg }}
 
             for item in $(./ppkg ls-installed)
@@ -147,7 +155,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [jackaudio, jasper, jemalloc, jfrog-cli, jj, joshuto, jpegoptim, jq, json-glib, jump, k9s, kcp, kcptun, ko, krb5, lazygit, lcms2, lcov, ldns, less, lexbor, lf, libaec, libao, libasprintf, libasync++, libb2, libb64, libbcrypt, libblake3, libcaca, libcanberra, libcddb, libcdio, libcfitsio, libcgif, libclc, libcpuinfo, libcroco, libcuefile, libcyaml, libdecor, libdiscid, libduktape, libdv, libdvdnav, libexhale, libexiv2, libflac, libflatbuffers, libglfw3, libglm, libglob, libgphoto2, libgraphene, libhwy, libical, libilbc, libimagequant, libintl-lite, libirecovery, libisoburn, libjpeg, liblinear, liblmdb, liblo, libmad, libmaxminddb, libmd, libmesalink, libmetalink, libmhash, libmicrohttpd, libmill, libmimalloc, libminiz, libmms, libmnl, libmpir, libnetpbm, libnng, libopenh264, libphonenumber, libphysfs, libpipeline, libpng++, libpq, libproxy, libpugixml, libqalculate, libqrencode, libquiche, libraqm, librasterlite, librasterlite2, libre, libreplaygain, libressl, libresvg, librist, librsync, librtmp, libsigsegv, libsmi, libspectre, libspng, libsvg, libsvm, libtalloc, libtextstyle, libthai, libtins, libtinyxml2, libtorrent-rasterbar, libtree, libtwolame, libupnp, libusrsctp, libuuid, libuvc, libvidstab, libvips, libwasmtime, libwavpack, libwebm, libwordexp, libxml2@2.11, libyuv]
+        pkg: [less, lexbor, lf, libaec, libao, libaria2, libasprintf, libasync++, libb2, libb64, libbcrypt, libblake3, libbotan, libcaca, libcaf, libcanberra, libcddb, libcdio, libcfitsio, libcgif, libclc, libcpuinfo, libcroco, libcuefile, libcurl@8.4.0, libcyaml, libdecor, libdiscid, libduktape, libdv, libdvdnav, libexhale, libexiv2, libflatbuffers, libglfw3, libglm, libglob, libgphoto2, libgraphene, libhwy, libical, libilbc, libimagequant, libintl-lite, libirecovery, libisoburn, libjpeg, liblinear, liblmdb, liblo, libmad, libmaxminddb, libmd, libmesalink, libmetalink, libmhash, libmicrohttpd, libmill, libmimalloc, libminiz, libmms, libmnl, libmpir, libnetpbm, libnng, libopenh264, libphonenumber, libphysfs, libpipeline, libpng++, libpq, libproxy, libpugixml, libqalculate, libqpdf, libquiche, libraqm, librasterlite, librasterlite2, libre, libreplaygain, libressl, libresvg, librist, librsync, librtmp, libsigsegv, libsmi, libspectre, libspng, libsvg, libsvm, libtalloc, libtextstyle, libthai, libtins, libtinyxml2, libtorrent-rasterbar, libtree, libtwolame, libupnp, libusrsctp, libuuid, libuvc, libvidstab, libvips, libwasmtime, libwavpack, libwebm, libwordexp, libxml2@2.11, libyuv, libz3, libzim, libzlog, lighttpd, links, livego, llhttp, llvm@14, llvm@15, llvm@16, llvm@17, llvm@18, lmdb, lnd, lodepng, log4cplus]
 
     runs-on: ubuntu-latest
 
@@ -176,6 +184,10 @@ jobs:
             run ./ppkg about
             run ./ppkg setup --syspm
             run ./ppkg update
+
+            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+
             run ./ppkg install ${{ matrix.pkg }}
 
             for item in $(./ppkg ls-installed)
@@ -216,7 +228,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [libz3, libzim, libzlog, lief, lighttpd, lima, links, livego, llhttp, llvm@14, llvm@15, llvm@16, llvm@17, llvm@18, lmdb, lnd, lodepng, log4cplus, lolcat, lrzip, lsd, lsof, luau, lunatic, lunzip, lychee, lynx, lzop, magic_enum, makepkg, mawk, mcfly, md4c, mdbook, mdcat, mediainfo, mftrace, midnight-commander, mimalloc, minisign, miniz, mkcert, mkcue, mksh, mm-wiki, mold, mono, moreutils, mosh, mozjpeg, mpdecimal, mpg123, mpv, msgpack-c, mujs, mupdf, nano, nanomsg, nap, nasm, navi, ncdu, neofetch, netcat, nethogs, nghttp2, nginx, ngtcp2, ninja, nng, nnn, nsh, nspr, ntbtls, nuclei, nushell, oat++, obfs4proxy, onefetch, open264, openal-soft, opencl-icd-loader, opencore-amr, opencv, openfst, openimageio, openldap, openlibm, openmpi, openslide, openssl, p7zip, packcc, patchelf, pax, pbzip2, pcapplusplus, pcre, pcre2, pegof, pget, physfs, pigz, pipewire, pixman, pjsip, pkg-config, pkgconf, plog, plzip, png, pngcheck, pngquant, pngsplit, pocl, poco, pop, ppkg, procs, progress, proto-cli, psimd, pup, putty, pv, python3-setup, python@3.10, python@3.11.6]
+        pkg: [lolcat, lrzip, lsd, lsof, luau, lunatic, lunzip, lychee, lynx, lzop, magic_enum, makepkg, mawk, mcfly, md4c, mdbook, mdcat, mediainfo, mftrace, midnight-commander, mimalloc, minisign, miniz, mkcert, mkcue, mksh, mm-wiki, mold, mono, moreutils, mosh, mozjpeg, mpdecimal, mpg123, mpv, msgpack-c, mujs, mupdf, nano, nanomsg, nap, nasm, navi, ncdu, neofetch, netcat, nethogs, nghttp2, nginx, ngtcp2, ninja, nng, nnn, nsh, nspr, ntbtls, nuclei, nushell, oat++, obfs4proxy, onefetch, open264, openal-soft, opencl-icd-loader, opencolorio, opencore-amr, opencv, openexr, openfst, openimageio, openjpeg, openldap, openlibm, openmpi, openslide, openssl, p7zip, packcc, patchelf, pax, pbzip2, pcapplusplus, pcre, pcre2, pegof, pget, physfs, pigz, pipewire, pixman, pjsip, pkg-config, pkgconf, plog, plzip, png, pngcheck, pngquant, pngsplit, pocl, poco, pop, ppkg, procs, progress, proj, proto-cli, psimd, pup, putty, pv, python3-setup, python@3.10, python@3.11.6, python@3.12, python@3.9, q, qpdf, qrencode, quiche, quickjs, ragel, rang, ranger, rapidjson, rav1e, rclone, re2c]
 
     runs-on: ubuntu-latest
 
@@ -245,6 +257,10 @@ jobs:
             run ./ppkg about
             run ./ppkg setup --syspm
             run ./ppkg update
+
+            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+
             run ./ppkg install ${{ matrix.pkg }}
 
             for item in $(./ppkg ls-installed)
@@ -285,7 +301,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [python@3.12, python@3.9, q, qpdf, quiche, quickjs, ragel, rang, ranger, rapidjson, rclone, re2c, redis, restic, resvg, rhash, ripgrep, ripgrep-all, rlwrap, rsass, rsync, rtorrent, rttr, ruff, rust-analyzer, rustup-init, sassc, scc, sccache, sd, shc, shell2http, shellcheck, shellharden, shiori, silicon, simdjson, six, sjpeg, skcms, sl, socat, soundtouch, speex, spirv-tools, sqlite3, sqlite3_analyzer, srs, srt, starship, stwolame, stylua, subfinder, supervisord, suricata, svn-lite, syncthing, sysdig, sysinfo, szip, talloc, tarlz, tbb, tbls, tbox, tcc, tcl-core, tcpdump, tdu, tealdeer, tectonic, tengo, terragrunt, tesseract, test, tiff, tig, tinysearch, tlrc, tmux, tokei, toml++, toml11, tree, trietool, ttyd, ttygif, ttyrec, tut, tweego, twolame, typos, uctags, unbound, unixodbc, unrar, unzip, uppm, uppm@0.15.1, uppm@0.15.2, uppm@0.15.3, uppm@0.15.4, usbutils, utf8.h, utfcpp, util-linux, valijson, vegeta, virustotal-cli, viu, volta, vsftpd, w3m, walk, wasm-pack, wasm3, wasmer, wasmtime, watchexec, wavpack, webhook, webp, websocketpp, wget, whois, wolfssl, wuzz, x264]
+        pkg: [redis, restic, resvg, rhash, ripgrep, ripgrep-all, rlwrap, rover, rsass, rsync, rtorrent, rttr, ruff, rust-analyzer, rustup-init, sassc, scc, sccache, sd, shc, shell2http, shellcheck, shellharden, shiori, silicon, simdjson, six, sjpeg, skcms, sl, socat, soundtouch, speex, speexdsp, spirv-tools, sqlite3, sqlite3_analyzer, srs, srt, starship, stwolame, stylua, subfinder, supervisord, suricata, svn-lite, svt-av1, syncthing, sysdig, sysinfo, szip, talloc, tarlz, tbb, tbls, tbox, tcc, tcl-core, tcpdump, tdu, tealdeer, tectonic, tengo, terragrunt, tesseract, test, theora, tiff, tig, tinysearch, tlrc, tmux, tokei, toml++, toml11, totp-cli, tree, trietool, ttyd, ttygif, ttyrec, tut, tweego, twolame, typos, uctags, unbound, unixodbc, unrar, unzip, uppm, uppm@0.15.1, uppm@0.15.2, uppm@0.15.3, uppm@0.15.4, usbutils, utf8.h, utfcpp, util-linux, valijson, vegeta, virustotal-cli, viu, volta, vsftpd, w3m, walk, wasm-pack, wasm3, wasmer, wasmtime, watchexec, wavpack, webhook, webp, websocketpp, wget, whois, wolfssl, wuzz, x264, x265, xbps, xclip, xh, xmake, xmlrpc-c, xmlto]
 
     runs-on: ubuntu-latest
 
@@ -314,6 +330,10 @@ jobs:
             run ./ppkg about
             run ./ppkg setup --syspm
             run ./ppkg update
+
+            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+
             run ./ppkg install ${{ matrix.pkg }}
 
             for item in $(./ppkg ls-installed)
@@ -354,7 +374,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [x265, xbps, xclip, xh, xmake, xmlrpc-c, xmlto, xmlutils, xmlwf, xorg-libxpresent, xorg-libxscrnsaver, xorg-libxtst, xorriso, xpup, xsltproc, xvid, xxd, yajl, yaml-cpp, yasm, yazi, ycm, youtubedr, yq, yyjson, z3, zig, zip, zlib, zlib-ng, zlog, zls, zola, zopfli, zoxide, zsh, zstd, zsync]
+        pkg: [xmlutils, xmlwf, xorg-libxpresent, xorg-libxscrnsaver, xorg-libxtst, xorriso, xpup, xsltproc, xvid, xxd, xxhash, yajl, yasm, yazi, ycm, youtubedr, yq, yyjson, z3, zig, zip, zlib, zlib-ng, zlog, zls, zola, zopfli, zoxide, zsh, zstd, zsync]
 
     runs-on: ubuntu-latest
 
@@ -383,6 +403,10 @@ jobs:
             run ./ppkg about
             run ./ppkg setup --syspm
             run ./ppkg update
+
+            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+
             run ./ppkg install ${{ matrix.pkg }}
 
             for item in $(./ppkg ls-installed)
