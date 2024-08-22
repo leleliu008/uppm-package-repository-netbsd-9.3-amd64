@@ -16,7 +16,7 @@ sed -n '/^dep-pkg:/p' *.yml | cut -c10- | tr ' ' '\n' | sort | uniq > b
 
 SED="sed -e s|^-||"
 
-for item in aom argparse arping autogen autossh azcopy bandwhich brpc cmake ccache ctop dolt docbook dua duf effcee exiv2 fakeroot fnm fortune fsmon g gf gn gotop jfrog-cli lief lima timg watchman
+for item in anchor-cli aom argparse arping autogen autossh azcopy bandwhich brpc binaryen bottom cmake ccache code-cli ctop cpuid cpu_features dolt docbook dua duf e2fsprogs effcee exiv2 fakeroot fnm fortune fsmon g gf gn gotopt geographiclib gcc gcc@12 gdb glew itstool jackaudio jfrog-cli k9s lief lima timg watchman
 do
     SED="$SED -e /^$item$/d"
 done
@@ -105,6 +105,7 @@ do
 
             ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
             ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
+            ln -sf ~/.ppkg/repos.d/official-core/formula/gobject-introspection@1.76.yml ~/.ppkg/repos.d/official-core/formula/gobject-introspection.yml
 
             run ./ppkg install \${{ matrix.pkg }}
 
