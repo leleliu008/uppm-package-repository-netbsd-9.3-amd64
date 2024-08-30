@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [aalib, abook, act, actionlint, adig, aerc, aften, ag, age, agg, alacritty, alass, algernon, ali, aliyun-cli, antibody, apkeep, apr, aptly, archiver, args, aria2, aribb24, async++, atuin, autoconf-archive, automake, autotools-setup, awk, axel, b3sum, base16, base64, bash, basis_universal, bat, bazelisk, bc, bcrypt, bear, berkeley-db, bgrep, binaryen, bind, binocle, bitcoin, bk, blockhash, bmake, boringssl, boxes, brook, broot, brotli, bsdtar, bullet, byacc, c-examples, caddy, cargo-c, cargo-deb, catch2, catimg, cdrtools, cereal, cfitsio, cflow, cgal, cgif, chafa, cheat, check, chezmoi, chicken, chinese-calendar, choose, cilium-cli, circleci-cli, cli11, click, clog, cmark, cmatrix, coreutils, cotp, cpio, cppcheck, cppunit, cpuinfo, croc, crosstool-ng, crowbook, cue, cups, curl, curlie, cxxopts, d2, darkhttpd, dasel, dash, dav1d, delta, difftastic, diffutils, distcc, dmalloc, dns2tcp, dnslookup, dnsmap, dnsx, dog, doggo, dos2unix, dot_static, doxygen, dtc, dufs, dust, easyutils, ed, elfcat, elvish, epsilon, erdtree, esbuild, ethereum, exa]
+        pkg: [aalib, abook, act, actionlint, adig, aerc, aften, ag, age, agg, alacritty, alass, algernon, ali, aliyun-cli, antibody, apkeep, apr, aptly, archiver, args, aria2, aribb24, async++, atuin, autoconf-archive, automake, autotools-setup, awk, axel, b3sum, base16, base64, bash, basis_universal, bat, bazelisk, bc, bcrypt, bear, berkeley-db, bgrep, binaryen, bind, binocle, bitcoin, bk, blockhash, bmake, boxes, brook, broot, brotli, bsdtar, bullet, byacc, c-examples, caddy, cargo-c, cargo-deb, catch2, catimg, cdrtools, cereal, cfitsio, cflow, cgal, cgif, chafa, cheat, check, chezmoi, chicken, chinese-calendar, choose, cilium-cli, circleci-cli, cli11, click, clog, cmark, cmatrix, coreutils, cotp, cpio, cppcheck, cppunit, cpuinfo, croc, crosstool-ng, crowbook, cue, cups, curl, curlie, cxxopts, d2, darkhttpd, dasel, dash, dav1d, delta, difftastic, diffutils, distcc, dmalloc, dns2tcp, dnslookup, dnsmap, dnsx, dog, doggo, dos2unix, doxygen, dtc, dufs, dust, easyutils, ed, elfcat, elvish, epsilon, erdtree, esbuild, ethereum, exa, exhale, eza]
 
     runs-on: ubuntu-latest
 
@@ -28,9 +28,23 @@ jobs:
             }
 
             run sudo pkgin -y update
-            run sudo pkgin -y install curl
+            run sudo pkgin -y install curl gmake
 
             run export SSL_CERT_FILE="$PWD/cacert.pem"
+
+            if [ ${{ matrix.pkg }} = xmakexx ] ; then
+                run curl -LO https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
+                run tar xf xmake-v2.9.4.tar.gz
+                run cd xmake-v2.9.4
+                run ./configure
+                run gmake
+                run gmake install PREFIX=/usr/local
+                run cd -
+            fi
+
+            if [ ${{ matrix.pkg }} = xmake ] ; then
+                curl -fsSL https://xmake.io/shget.text | bash
+            fi
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -83,7 +97,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [exhale, eza, fcp, fd, fdroidcl, fff, figlet, findent, findutils, fish, flatbuffers, flatc, flock, freetype2, frei0r, fselect, fswatch, fzf, fzy, garble, gat, gawk, gbt, gdbm, gdk-pixbuf-tools, gdu, germanium, gettext-tools, gh, ghr, gif2png, giflib, gindent, git, git-cliff, git-lfs, gitoxide, gitui, gitwatch, glib-tools, glib@2.78, glm, glow, glslviewer, glyr, gmake, gnu-barcode, gnu-which, gnupg, gnuplot, gnutls, go-md2man, go-tools, gobject-introspection@1.76, godu, gogs, golang, golang@1.21, gomobile, google-benchmark, google-highway, gopls, goreleaser, gosh, gotty, gox, gperf, gping, gpsim, gputils, grep, grex, groff, gron, grpc-plugins, gsed, gtime, gts, halibut, hashcat, helix, helm, help2man, hexdump, hexyl, htop, htslib, httpx, hugo, hunspell, hunter, hurl, hydroxide, hyperfine, icu4c@75.1, id3lib, invoice, iperf3, ixwebsocket, jasper, jbig2dec, jemalloc, jj, jless, joshuto, jpegoptim, jq, json-glib, jump, kcp, kcptun, ko, krb5, lame, lazygit, lcms2, lcov, ldns, leptonica, less, lexbor, lf, libaec, libao, libaria2, libasprintf, libasync++, libb2]
+        pkg: [fcp, fd, fdroidcl, fff, figlet, findent, findutils, fish, flatbuffers, flatc, flock, freetype2, frei0r, fselect, fswatch, fzf, fzy, garble, gat, gawk, gbt, gdbm, gdk-pixbuf-tools, gdu, germanium, gettext-tools, gh, ghr, gif2png, giflib, gindent, git, git-cliff, git-lfs, gitoxide, gitui, gitwatch, glib-tools, glib@2.78, glm, glow, glyr, gmake, gnu-barcode, gnu-which, gnupg, gnuplot, gnutls, go-md2man, go-tools, gobject-introspection@1.76, godu, gogs, golang, golang@1.21, gomobile, google-benchmark, google-highway, gopls, goreleaser, gosh, gotty, gox, gperf, gping, gpsim, gputils, grep, grex, groff, gron, grpc-plugins, grpc-plugins@1.62.2, grpc-plugins@1.66.1, gsed, gtime, gts, halibut, hashcat, helix, helm, help2man, hexdump, hexyl, htop, htslib, httpx, hugo, hunspell, hunter, hurl, hydroxide, hyperfine, icu4c@75.1, id3lib, invoice, iperf3, ixwebsocket, jasper, jbig2dec, jemalloc, jj, jless, joshuto, jpegoptim, jq, json-glib, jump, kcp, kcptun, ko, krb5, lame, lazygit, lcms2, lcov, ldns, leptonica, less, lexbor, lf, libaec, libao, libaria2, libasprintf, libasync++, libb2, libb64]
 
     runs-on: ubuntu-latest
 
@@ -102,9 +116,23 @@ jobs:
             }
 
             run sudo pkgin -y update
-            run sudo pkgin -y install curl
+            run sudo pkgin -y install curl gmake
 
             run export SSL_CERT_FILE="$PWD/cacert.pem"
+
+            if [ ${{ matrix.pkg }} = xmakexx ] ; then
+                run curl -LO https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
+                run tar xf xmake-v2.9.4.tar.gz
+                run cd xmake-v2.9.4
+                run ./configure
+                run gmake
+                run gmake install PREFIX=/usr/local
+                run cd -
+            fi
+
+            if [ ${{ matrix.pkg }} = xmake ] ; then
+                curl -fsSL https://xmake.io/shget.text | bash
+            fi
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -157,7 +185,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [libb64, libbcrypt, libblake3, libbotan, libcaca, libcanberra, libcddb, libcdio, libcfitsio, libcgif, libclc, libcpuinfo, libcroco, libcuefile, libcurl@8.4.0, libcyaml, libdiscid, libduktape, libdv, libdvdnav, libexhale, libexiv2, libflatbuffers, libglfw3, libglm, libglob, libgphoto2, libgraphene, libhtp, libhttpserver, libhwy, libical, libilbc, libimagequant, libintl-lite, libisoburn, libjpeg, liblinear, liblmdb, liblo, libmad, libmaxminddb, libmd, libmesalink, libmetalink, libmhash, libmill, libmimalloc, libminiz, libmms, libmnl, libmpir, libnetpbm, libnng, libopenh264, libphonenumber, libphysfs, libpipeline, libpng++, libpq, libproxy, libpugixml, libqalculate, libqpdf, libraqm, librasterlite, librasterlite2, libre, libreplaygain, libressl, libresvg, librhash, librist, librsync, librtmp, libsigsegv, libsmi, libspectre, libspng, libsvg, libsvm, libtalloc, libtextstyle, libthai, libtins, libtinyxml2, libtorrent-rasterbar, libtree, libtwolame, libupnp, libusrsctp, libuuid, libuvc, libvidstab, libvips, libwasmtime, libwavpack, libwebm, libwordexp, libxml2@2.11, libyuv, libz3, libzim, libzlog, lighttpd, links, livego, llhttp, lmdb, lnd, lodepng, log4cplus, lolcat, lrzip, lsd, lsof, luau, lunatic, lunzip, lychee, lynx, lzop, magic_enum, makepkg, mawk, mcfly, md4c, mdbook]
+        pkg: [libbcrypt, libblake3, libbotan, libcaca, libcanberra, libcddb, libcdio, libcfitsio, libcgif, libcpuinfo, libcroco, libcuefile, libcurl@8.4.0, libcyaml, libdiscid, libduktape, libdv, libdvdnav, libexhale, libexiv2, libflatbuffers, libftgl, libglfw3, libglm, libglob, libgphoto2, libgraphene, libhtp, libhttpserver, libhwy, libical, libilbc, libimagequant, libintl-lite, libisoburn, libjpeg, liblinear, liblmdb, liblo, libmad, libmaxminddb, libmd, libmesalink, libmetalink, libmhash, libmill, libmimalloc, libminiz, libmms, libmpir, libnetpbm, libnng, libphonenumber, libpipeline, libpng++, libproxy, libpugixml, libqalculate, libqpdf, libraqm, librasterlite, librasterlite2, libre, libreplaygain, libressl, libresvg, librhash, librsync, librtmp, libsigsegv, libsmi, libspectre, libspng, libsvg, libsvm, libtalloc, libtextstyle, libthai, libtins, libtinyxml2, libtorrent-rasterbar, libtree, libtwolame, libupnp, libuuid, libuvc, libvidstab, libvips, libwavpack, libwebm, libwordexp, libxml2@2.11, libyuv, libz3, libzim, lighttpd, links, livego, llhttp, lmdb, lodepng, log4cplus, lolcat, lrzip, lsd, luau, lunzip, lychee, lynx, lzop, magic_enum, makepkg, mawk, md4c, mdbook, mdcat, mediainfo, mftrace, midnight-commander, mimalloc, minisign, miniz, minizip, mkcert, mkcue, mksh, mm-wiki, mold]
 
     runs-on: ubuntu-latest
 
@@ -176,9 +204,23 @@ jobs:
             }
 
             run sudo pkgin -y update
-            run sudo pkgin -y install curl
+            run sudo pkgin -y install curl gmake
 
             run export SSL_CERT_FILE="$PWD/cacert.pem"
+
+            if [ ${{ matrix.pkg }} = xmakexx ] ; then
+                run curl -LO https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
+                run tar xf xmake-v2.9.4.tar.gz
+                run cd xmake-v2.9.4
+                run ./configure
+                run gmake
+                run gmake install PREFIX=/usr/local
+                run cd -
+            fi
+
+            if [ ${{ matrix.pkg }} = xmake ] ; then
+                curl -fsSL https://xmake.io/shget.text | bash
+            fi
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -231,7 +273,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [mdcat, mediainfo, mftrace, midnight-commander, mimalloc, minisign, miniz, minizip, mkcert, mkcue, mksh, mm-wiki, mold, mono, moreutils, mosh, mozjpeg, mpdecimal, mpg123, mpv, msgpack-c, mujs, mupdf, nano, nanomsg, nap, nasm, navi, ncdu, neofetch, netcat, nethogs, nettle, nghttp2, nginx, ngtcp2, ninja, nng, nnn, nsh, nspr, ntbtls, nuclei, nushell, oat++, obfs4proxy, onefetch, open264, openal-soft, opencl-icd-loader, opencolorio, opencore-amr, opencv, openexr, openfst, openimageio, openjpeg, openldap, openlibm, openmpi, openslide, openssl, p11-kit, p7zip, packcc, patchelf, patchelf@0.17.2, pax, pbzip2, pcapplusplus, pcre, pcre2, pegof, pget, physfs, pigz, pipewire, pixman, pjsip, pkg-config, pkgconf, plog, plzip, png, pngcheck, pngquant, pngsplit, pocl, poco, pop, ppkg, progress, proj, proto-cli, psimd, pup, putty, pv, python3-setup, python@3.10, python@3.11.6, python@3.12, python@3.9, q, qpdf, qrencode, quickjs, ragel, rang, rapidjson, rav1e, rclone, re2c, redis, restic, resvg, rhash, ripgrep, ripgrep-all, rlwrap, rover, rsass, rsync, rtorrent, rttr, ruff, rust-analyzer, rustup-init]
+        pkg: [mono, moreutils, mosh, mozjpeg, mpdecimal, mpg123, mpv, msgpack-c, mujs, mupdf, nano, nanomsg, nap, nasm, navi, ncdu, neofetch, netcat, nethogs, nettle, nghttp2, nginx, ngtcp2, ninja, nng, nnn, nsh, nspr, ntbtls, nuclei, nushell, oat++, obfs4proxy, onefetch, open264, openal-soft, opencl-icd-loader, opencolorio, opencore-amr, opencv, openexr, openfst, openimageio, openjpeg, openldap, openlibm, openmpi, openslide, openssl, p11-kit, p7zip, packcc, patchelf, patchelf@0.17.2, pax, pbzip2, pcapplusplus, pcre, pcre2, pegof, pget, pigz, pipewire, pixman, pjsip, pkg-config, pkgconf, plog, plzip, png, pngcheck, pngquant, pngsplit, pocl, poco, pop, popt, ppkg, progress, proj, proto-cli, psimd, pup, putty, pv, python3-setup, python@3.10, python@3.11.6, python@3.12, python@3.9, q, qpdf, qrencode, quickjs, ragel, rang, rapidjson, rav1e, rclone, re2c, redis, restic, resvg, rhash, ripgrep, ripgrep-all, rlwrap, rover, rsass, rsync, rtorrent, rttr, ruff, rust-analyzer, rustup-init, sassc, scc, sccache, sd, shc, shell2http, shellharden, shiori, silicon, simdjson, sjpeg, skcms, sl]
 
     runs-on: ubuntu-latest
 
@@ -250,9 +292,23 @@ jobs:
             }
 
             run sudo pkgin -y update
-            run sudo pkgin -y install curl
+            run sudo pkgin -y install curl gmake
 
             run export SSL_CERT_FILE="$PWD/cacert.pem"
+
+            if [ ${{ matrix.pkg }} = xmakexx ] ; then
+                run curl -LO https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
+                run tar xf xmake-v2.9.4.tar.gz
+                run cd xmake-v2.9.4
+                run ./configure
+                run gmake
+                run gmake install PREFIX=/usr/local
+                run cd -
+            fi
+
+            if [ ${{ matrix.pkg }} = xmake ] ; then
+                curl -fsSL https://xmake.io/shget.text | bash
+            fi
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -305,7 +361,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [sassc, scc, sccache, sd, shc, shell2http, shellharden, shiori, silicon, simdjson, six, sjpeg, skcms, sl, socat, soundtouch, speex, speexdsp, spirv-tools, sqlite3, sqlite3_analyzer, starship, stwolame, stylua, subfinder, supervisord, svn-lite, svt-av1, syncthing, sysdig, sysinfo, szip, talloc, tarlz, tbb, tbls, tbox, tcc, tcl-core, tcpdump, tealdeer, tengo, terragrunt, tesseract, theora, tiff, tig, tinysearch, tlrc, tmux, tokei, toml++, toml11, totp-cli, tree, trietool, ttyd, ttygif, ttyrec, tut, tweego, twolame, typos, uctags, unbound, unixodbc, unrar, unzip, uppm, uppm@0.15.1, uppm@0.15.2, uppm@0.15.3, uppm@0.15.4, usbutils, utf8.h, utfcpp, util-linux, valijson, vegeta, virustotal-cli, viu, vsftpd, w3m, walk, wasm-pack, wasm3, wasmer, wasmtime, watchexec, wavpack, webhook, webp, websocketpp, wget, whois, wolfssl, wuzz, x264, x265, xclip, xh, xmake, xmlrpc-c, xmlto, xmlutils, xmlwf, xorg-libxpresent, xorg-libxscrnsaver, xorg-libxtst, xorriso, xpup, xsltproc, xvid, xxd, xxhash, yajl, yasm, yazi, youtubedr, yq, yyjson, z3, zip, zlib, zlib-ng, zlog, zls, zola]
+        pkg: [socat, soundtouch, speex, speexdsp, spirv-tools, sqlite3, sqlite3_analyzer, starship, stwolame, stylua, subfinder, supervisord, svn-lite, svt-av1, syncthing, sysdig, sysinfo, szip, talloc, tarlz, tbb, tbls, tcc, tcpdump, tealdeer, tengo, terragrunt, tesseract, theora, tiff, tig, tinysearch, tlrc, tmux, tokei, toml++, toml11, totp-cli, tree, trietool, ttyd, ttygif, ttyrec, tut, tweego, twolame, typos, uctags, unbound, unixodbc, unrar, unzip, uppm, uppm@0.15.1, uppm@0.15.2, uppm@0.15.3, uppm@0.15.4, usbutils, utf8.h, utfcpp, util-linux, valijson, vegeta, virustotal-cli, viu, vsftpd, w3m, walk, wasm-pack, wasm3, watchexec, wavpack, webhook, webp, websocketpp, wget, whois, x264, x265, xclip, xh, xmlrpc-c, xmlto, xmlutils, xmlwf, xorg-libxpresent, xorg-libxscrnsaver, xorg-libxtst, xorriso, xpup, xsltproc, xvid, xxd, xxhash, yajl, yasm, yazi, youtubedr, yq, yyjson, z3, zip, zlib, zlib-ng, zls, zola, zopfli, zoxide, zsh, zstd, zsync]
 
     runs-on: ubuntu-latest
 
@@ -324,83 +380,23 @@ jobs:
             }
 
             run sudo pkgin -y update
-            run sudo pkgin -y install curl
+            run sudo pkgin -y install curl gmake
 
             run export SSL_CERT_FILE="$PWD/cacert.pem"
 
-            run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
-            run chmod +x ppkg
+            if [ ${{ matrix.pkg }} = xmakexx ] ; then
+                run curl -LO https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
+                run tar xf xmake-v2.9.4.tar.gz
+                run cd xmake-v2.9.4
+                run ./configure
+                run gmake
+                run gmake install PREFIX=/usr/local
+                run cd -
+            fi
 
-            run ./ppkg about
-            run ./ppkg setup --syspm
-            run ./ppkg update
-
-            ln -sf ~/.ppkg/repos.d/official-core/formula/python@3.11.yml ~/.ppkg/repos.d/official-core/formula/python3.yml
-            ln -sf ~/.ppkg/repos.d/official-core/formula/glib@2.78.yml   ~/.ppkg/repos.d/official-core/formula/glib.yml
-            ln -sf ~/.ppkg/repos.d/official-core/formula/gobject-introspection@1.76.yml ~/.ppkg/repos.d/official-core/formula/gobject-introspection.yml
-
-            run ./ppkg install ${{ matrix.pkg }}
-
-            for item in $(./ppkg ls-installed)
-            do
-                ./ppkg pack "$item"
-
-                PACKAGE_SUMMARY="$(./ppkg info-installed "$item" summary)"
-                PACKAGE_WEB_URL="$(./ppkg info-installed "$item" web-url)"
-                PACKAGE_VERSION="$(./ppkg info-installed "$item" version)"
-
-                PACKAGE_NAME="${item#*/}"
-
-                PACKAGE_FILENAME="$(ls $PACKAGE_NAME-$PACKAGE_VERSION-*.tar.xz)"
-
-                PACKAGE_BIN_SHA="$(./ppkg run sha256sum "$PACKAGE_FILENAME" | cut -d ' ' -f1)"
-
-                PACKAGE_BIN_URL="https://github.com/${{ github.repository }}/releases/download/@TAGNAME@/$PACKAGE_FILENAME"
-
-                cat > "$PACKAGE_NAME.yml" <<EOF
-            summary: $PACKAGE_SUMMARY
-            webpage: $PACKAGE_WEB_URL
-            version: $PACKAGE_VERSION
-            bin-url: $PACKAGE_BIN_URL
-            bin-sha: $PACKAGE_BIN_SHA
-            EOF
-            done
-
-      - run: ls
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.pkg }}
-          path: |
-            ./*.tar.xz
-            ./*.yml
-
-  build6:
-    strategy:
-      fail-fast: false
-      matrix:
-        pkg: [zopfli, zoxide, zsh, zstd, zsync]
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - run: curl -LO https://curl.se/ca/cacert.pem
-
-      - uses: cross-platform-actions/action@v0.25.0
-        with:
-          operating_system: netbsd
-          version: 9.3
-          shell: bash
-          run: |
-            run() {
-              printf "\033[0;35m==>\033[0m \033[0;32m%b\n\033[0m" "$*"
-              eval "$@"
-            }
-
-            run sudo pkgin -y update
-            run sudo pkgin -y install curl
-
-            run export SSL_CERT_FILE="$PWD/cacert.pem"
+            if [ ${{ matrix.pkg }} = xmake ] ; then
+                curl -fsSL https://xmake.io/shget.text | bash
+            fi
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
@@ -450,7 +446,7 @@ jobs:
             ./*.yml
 
   publish:
-    needs: [build1, build2, build3, build4, build5, build6]
+    needs: [build1, build2, build3, build4, build5]
 
     runs-on: ubuntu-latest
 
