@@ -16,7 +16,7 @@ sed -n '/^dep-pkg:/p' *.yml | cut -c10- | tr ' ' '\n' | sort | uniq > b
 
 SED="sed -e s|^-||"
 
-for item in anchor-cli aom argparse arping autogen autossh azcopy bandwhich brpc boringssl bottom cmake ccache code-cli ctop cpuid cpu_features dolt docbook dua duf e2fsprogs effcee exiv2 fakeroot fnm fortune fsmon g gf gn getopt geographiclib gcc gcc@12 gdb glew gotop ideviceinstaller incus itstool jackaudio jfrog-cli k9s libirecovery libcaf libdecor lief lima libquiche llvm@14 llvm@15 llvm@16 llvm@17 llvm@18 procs ranger shellcheck srs srt suricata tdu test tectonic timg volta watchman xbps ycm zig dot_static libclc mcfly glslviewer wolfssl wuzz libpq libzlog zlog-chk-conf lsof tbox xmake six lunatic lnd libusrsctp libopenh264 libphysfs physfs librist tcl-core libwasmtime wasmtime wasmer mkcert libglfw3 zls sysdig sqlite3_analyzer supervisord spirv-tools util-linux moreutils mono libtins progress p7zip pcapplusplus oat++ nap mpv ncdu nethogs
+for item in anchor-cli aom argparse arping autogen autossh azcopy bandwhich brpc boringssl bottom cmake ccache code-cli ctop cpuid cpu_features dolt docbook dua duf e2fsprogs effcee exiv2 fakeroot fnm fortune fsmon g gf gn getopt geographiclib gcc gcc@12 gdb glew gotop ideviceinstaller incus itstool jackaudio jfrog-cli k9s libirecovery libcaf libdecor lief lima libquiche llvm@14 llvm@15 llvm@16 llvm@17 llvm@18 procs ranger shellcheck srs srt suricata tdu test tectonic timg volta watchman xbps ycm zig dot_static libclc mcfly glslviewer wolfssl wuzz libpq libzlog zlog-chk-conf lsof six lunatic lnd libusrsctp libopenh264 libphysfs physfs librist tcl-core libwasmtime wasmtime wasmer mkcert libglfw3 zls sysdig sqlite3_analyzer supervisord spirv-tools util-linux moreutils mono libtins progress p7zip pcapplusplus oat++ nap ncdu nethogs tbls proto-cli opencl-icd-loader openpmix    wasm3 ttyd quickjs rtorrent mpv makepkg python@3.12 pocl poco pjsip tbox xmake libcaca libtorrent-rasterbar
 do
     SED="$SED -e /^$item$/d"
 done
@@ -95,20 +95,6 @@ do
             run sudo pkgin -y install curl gmake
 
             run export SSL_CERT_FILE="\$PWD/cacert.pem"
-
-            if [ \${{ matrix.pkg }} = xmakexx ] ; then
-                run curl -LO https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
-                run tar xf xmake-v2.9.4.tar.gz
-                run cd xmake-v2.9.4
-                run ./configure
-                run gmake
-                run gmake install PREFIX=/usr/local
-                run cd -
-            fi
-
-            if [ \${{ matrix.pkg }} = xmake ] ; then
-                curl -fsSL https://xmake.io/shget.text | bash
-            fi
 
             run curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
             run chmod +x ppkg
