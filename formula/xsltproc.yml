@@ -1,5 +1,5 @@
-summary: C XSLT library for GNOME
+summary: A command line tool for applying XSLT stylesheets to XML documents
 webpage: http://xmlsoft.org/XSLT
-version: 1.1.37 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/xsltproc-1.1.37-netbsd-9.2-amd64.tar.xz
-bin-sha: 17746f070e755c1b6ef55ae9399e41bf170c4649d926d644c8ed9fabd905d358
+version: 1.1.42 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2025.07.23/xsltproc-1.1.42-netbsd-9.3-amd64.release.tar.xz 
+bin-sha: 25485142d13edf040c31d9d80458218ed8a2da700ae0226a8821c646522713a5

@@ -1,0 +1,5 @@
+summary: A collections of command-line utilities provided by libxml2
+webpage: http://xmlsoft.org
+version: 2.13.5 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2025.07.23/xmlutils-2.13.5-netbsd-9.3-amd64.release.tar.xz 
+bin-sha: 6ce55918cb160da8c35d4b0fad079d0f4d2c567f945898c0ed731c1754123c04

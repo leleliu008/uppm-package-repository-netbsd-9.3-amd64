@@ -1,5 +1,5 @@
 summary: Display directories as trees (with optional color/HTML output)
-webpage: http://mama.indstate.edu/users/ice/tree
-version: 2.1.1 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/tree-2.1.1-netbsd-9.2-amd64.tar.xz
-bin-sha: 78ea95922a4382b6646f2c9f11ddf8dd92169644d13b30fe9ed4f6265b2d444d
+webpage: https://oldmanprogrammer.net/source.php?dir=projects/tree
+version: 2.2.1 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2025.07.23/tree-2.2.1-netbsd-9.3-amd64.release.tar.xz 
+bin-sha: e82ff687665b897b2298699c53e05ec985b22552c0db14461ec5982c2353ddde

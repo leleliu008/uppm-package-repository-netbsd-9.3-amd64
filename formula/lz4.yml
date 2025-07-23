@@ -1,5 +1,5 @@
 summary: Extremely Fast Compression algorithm
 webpage: http://www.lz4.org/
 version: 1.9.4 
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.09/lz4-1.9.4-netbsd-9.2-amd64.tar.xz
-bin-sha: e3b56a75f92b0c414929fae8923a67b0843aba614dcb4cadc7aa54816c548fcb
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2025.07.23/lz4-1.9.4-netbsd-9.3-amd64.release.tar.xz 
+bin-sha: 92a58d881058104176d3b3d4eb871d8aeb67ec5677cb8ee945786b0a73289897

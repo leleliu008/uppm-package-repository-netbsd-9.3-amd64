@@ -1,5 +1,5 @@
-summary: Distributed revision control system
+summary: A free and open source distributed version control system with speed and efficiency
 webpage: https://git-scm.com/
-version: 2.42.1
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.07/git-2.42.1-netbsd-9.3-amd64.tar.xz
-bin-sha: b6a08b3e3f8916d7d23acf1d94d7a8778208ade0c8ef7e5019db8a7db78717a6
+version: 2.50.0 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2025.07.23/git-2.50.0-netbsd-9.3-amd64.release.tar.xz 
+bin-sha: fa90621bb9cbb46b2d920a4eb9bd57b730c4e8556067b18c3341a973cdc81ad8

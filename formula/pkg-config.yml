@@ -1,5 +1,5 @@
-summary: Manage compile and link flags for libraries
+summary: A command-line tool to help you insert the correct compiler options when compiling objects and/or linking libraries
 webpage: https://freedesktop.org/wiki/Software/pkg-config
-version: 0.29.2
-bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2023.12.07/pkg-config-0.29.2-netbsd-9.3-amd64.tar.xz
-bin-sha: 24850635fed3a23a7466768f5f33f43e36115d2023bb8e6c65d9081c97477260
+version: 0.29.2 
+bin-url: https://github.com/leleliu008/uppm-package-repository-netbsd-9.3-amd64/releases/download/2025.07.23/pkg-config-0.29.2-netbsd-9.3-amd64.release.tar.xz 
+bin-sha: 98b6386e52392bd32fc15f3526db2b4f26e8ae95ab0e3e9c7cae011984cd1e2a
